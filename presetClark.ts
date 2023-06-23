@@ -1,12 +1,11 @@
-import { Preset } from 'unocss';
+import { Preset } from "unocss";
 
 export default function presetClark(): Preset {
   return {
-    name: 'presetClark',
+    name: "presetClark",
     preflights: [
       {
-        getCSS: () =>
-          ":root { font-size: 62.5%; }",
+        getCSS: () => ":root { font-size: 62.5%; }",
       },
     ],
     theme: {
@@ -17,6 +16,6 @@ export default function presetClark(): Preset {
       },
     },
     shortcuts: {},
-    rules: []
-  }
+    rules: [["bg-red", { "background-color": "red" }]],
+  };
 }

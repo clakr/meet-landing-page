@@ -1,13 +1,13 @@
 import { defineConfig, presetWebFonts, presetWind } from "unocss";
-import clarkPreset from './clarkPreset';
+import presetClark from "./presetClark";
 
 export default defineConfig({
   presets: [
     presetWind(),
     presetWebFonts({
       provider: "google",
-      fonts: {}
+      fonts: {},
     }),
-    presetClark()
+    presetClark(),
   ],
-})
+});

@@ -9,11 +9,6 @@ export default function presetClark(options?: PresetOptions): Preset {
         desktop: "1440px",
       },
     },
-    shortcuts: {
-      counter:
-        "mx-auto w-5.6 h-5.6 grid place-items-center c-manatee fs-1.6 fw-900 lh-2.6 rounded-full border border-manatee/25 relative after:content-empty after:absolute after:h-8.4 after:w-.1 after:bg-manatee after:opacity-25 after:-top-8.4",
-      grid__image: "br-.8",
-    },
     rules: [
       [
         /^mt-([\d.-]+)$/,
@@ -25,6 +20,12 @@ export default function presetClark(options?: PresetOptions): Preset {
         /^mb-([\d.-]+)$/,
         ([, value]) => ({
           "margin-bottom": `${value}rem`,
+        }),
+      ],
+      [
+        /^ml-([\d.-]+)$/,
+        ([, value]) => ({
+          "margin-left": `${value}rem`,
         }),
       ],
       [
@@ -111,11 +112,19 @@ export default function presetClark(options?: PresetOptions): Preset {
           "padding-bottom": `${value}rem`,
         }),
       ],
+
       [
-        "bg-mobile-footer",
-        {
-          "background-image": "url(/mobile/image-footer.jpg)",
-        },
+        /^max-w-([\d.-]+)$/,
+        ([, value]) => ({
+          "max-width": `${value}rem`,
+        }),
+      ],
+      [
+        /^gap-x-([\d.-]+)$/,
+        ([, value]) => ({
+          "grid-column-gap": `${value}rem`,
+          "column-gap": `${value}rem`,
+        }),
       ],
     ],
   };
